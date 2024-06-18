@@ -97,7 +97,7 @@ const Home: React.FC = () => {
                             withTableBorder
                             borderRadius="sm"
                             withColumnBorders
-                            styles={{ header: { background: "#f0f0f0" } }}
+                            styles={{ header: { background: "#f0f0f0cc" } }}
                             striped
                             totalRecords={meta?.total}
                             highlightOnHover
