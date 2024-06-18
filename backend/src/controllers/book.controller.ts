@@ -59,7 +59,6 @@ const fetchBooks = async (req: Request, res: Response) => {
       skip: page && limit ? ((parseInt(page as string) - 1) * parseInt(limit as string)) : 0,
       take: limit ? Number(limit) : 10,
     });
-    if (!books.length) return ServerResponse.notFound(res, "No books found")
     const total = await prisma.book.count({});
     return ServerResponse.success(res, "Books fetched successfully", {
       books,

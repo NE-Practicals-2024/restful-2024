@@ -1,9 +1,11 @@
+
 const whitelist = [
-    "http://localhost:3005",
-    // You can also add the backend url of this EMS
+    "http://localhost:3055",
+    "http://localhost:5055",
 ];
-const options = {
+const options: any = {
     origin: (origin: string, callback: Function) => {
+        console.log(origin);
         if (whitelist.indexOf(origin) !== -1) {
             callback(null, true);
         } else {

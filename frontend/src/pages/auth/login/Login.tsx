@@ -91,7 +91,7 @@ const Login: React.FC = () => {
                         {errors.password && <span className='text-red-400 text-[16px]'>{errors?.password?.message}</span>}
                     </div>
                     <button disabled={loading} type="submit" className={`${loading ? "bg-primary-blue/70" : "bg-primary-blue"} my-4 text-white w-44 flex justify-center px-6 py-3 rounded-lg`}>
-                        {loading ? <BiLoaderAlt className='animate-spin ' size={25} /> : "Submit"}
+                        {loading ? <BiLoaderAlt className='animate-spin ' size={25} /> : "Login"}
                     </button>
                 </form>
             </div>

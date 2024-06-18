@@ -44,7 +44,6 @@ export const getBooks = async (
         const response = await api.get(url)
         setBooks(response.data.data.books)
         setMeta(response.data.data.meta)
-        console.log(response.data.data)
     }
     catch (error: any) {
         if (error.response.data.status === 401) return window.location.replace("/auth/login")

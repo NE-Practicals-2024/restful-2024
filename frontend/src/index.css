@@ -9,3 +9,7 @@
   scroll-behavior: smooth;
   transition: all 0.25s linear;
 }
+
+#root > div.w-full.flex.flex-col.min-h-screen.justify-between.bg-\[\#f3f6fa\] > div > div.w-full.smlg\:w-11\/12.flex.flex-col > div.flex.flex-col.px-14.pt-8 > div > div.mantine-datatable.mantine-datatable-with-border > div.mantine-datatable-pagination > div.mantine-datatable-pagination-pages.m_4addd315.mantine-Pagination-root > div > button:nth-child(2){
+  background-color: #1967d2 !important;
+}

@@ -14,7 +14,6 @@ export const signIn = async ({ dispatch, setLoading, email, password }: {
         const url = "/auth/login";
         const response = await api.post(url, { email, password })
         toast.success("Login successful")
-        console.log(response)
         dispatch(login({ ...response.data.data }))
         localStorage.setItem("token", response.data.data.token)
         setTimeout(() => {

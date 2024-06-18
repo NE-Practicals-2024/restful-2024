@@ -7,6 +7,7 @@ import swaggerUi from 'swagger-ui-express';
 import router from './routes';
 import swaggerFile from './swagger/doc/swagger.json';
 import ServerResponse from './utils/ServerResponse';
+import options from './utils/cors';
 
 config()
 
@@ -16,7 +17,7 @@ const PORT = process.env.PORT
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors({ origin: "*" }))
+app.use(cors({ ...options }))
 app.disable('x-powered-by');
 
 app.use('/api/v1', router)
