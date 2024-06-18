@@ -59,6 +59,7 @@ const fetchBooks = async (req: Request, res: Response) => {
       skip: page && limit ? ((parseInt(page as string) - 1) * parseInt(limit as string)) : 0,
       take: limit ? Number(limit) : 10,
     });
+    if (!books.length) return ServerResponse.notFound(res, "No books found")
     const total = await prisma.book.count({});
     return ServerResponse.success(res, "Books fetched successfully", {
       books,
@@ -81,6 +82,7 @@ const findById = async (req: Request, res: Response) => {
         id: parseInt(id),
       },
     });
+    if (!book) return ServerResponse.notFound(res, `Book with id ${id} as not found`)
     return ServerResponse.success(res, "Book fetched successfully", { book });
   } catch (error) { }
 };
