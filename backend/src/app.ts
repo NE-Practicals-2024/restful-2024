@@ -3,11 +3,11 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import express from 'express';
 import http from 'http';
+import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import router from './routes';
 import swaggerFile from './swagger/doc/swagger.json';
 import ServerResponse from './utils/ServerResponse';
-import options from './utils/cors';
 
 config()
 
@@ -18,7 +18,10 @@ const PORT = process.env.PORT
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({ origin: "*" }))
+app.use(morgan('dev'))
 app.disable('x-powered-by');
+
+morgan(':method :url :status :res[content-length] - :response-time ms')
 
 app.use('/api/v1', router)
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
