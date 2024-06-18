@@ -22,7 +22,7 @@ app.disable('x-powered-by');
 app.use('/api/v1', router)
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use("*", (req, res) => {
-    return ServerResponse.error(res, "Route not found")
+    return ServerResponse.notFound(res, "Route not found")
 })
 
 server.listen(PORT, () => {
