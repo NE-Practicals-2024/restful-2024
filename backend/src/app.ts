@@ -17,7 +17,7 @@ const PORT = process.env.PORT
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors({ ...options }))
+app.use(cors({ origin: "*" }))
 app.disable('x-powered-by');
 
 app.use('/api/v1', router)

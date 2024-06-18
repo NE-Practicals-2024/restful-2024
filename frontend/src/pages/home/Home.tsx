@@ -21,12 +21,14 @@ const Home: React.FC = () => {
         {
             accessor: 'id',
             title: '#',
-            sortable: true
+            sortable: true,
+            sortKey: "id"
         },
         {
             accessor: 'name',
             title: 'Name',
-            sortable: true
+            sortable: true,
+            sortKey: "name"
         },
         {
             accessor: 'author',
@@ -69,8 +71,8 @@ const Home: React.FC = () => {
             </Helmet>
             <div className='w-full smlg:w-11/12 flex flex-col'>
                 <Navbar />
-                <div className=' flex flex-col px-14 pt-8'>
-                    <span className='text-lg font-semibold'>Welcome {user.firstName} {user.lastName}</span>
+                <div className=' flex flex-col px-2 xs:px-6 sm:px-14 pt-8'>
+                    <span className='text-lg font-semibold'>Hi👋, {user.firstName} {user.lastName}</span>
                     <div className='w-full my-14'>
                         <div className='w-full justify-end sm:justify-between flex mb-6 items-center'>
                             <span className='hidden sm:flex my-8 text-xl'>Books in RCA LMS</span>
@@ -95,7 +97,7 @@ const Home: React.FC = () => {
                             withTableBorder
                             borderRadius="sm"
                             withColumnBorders
-                            styles={{header:{background:"#f0f0f0"}}}
+                            styles={{ header: { background: "#f0f0f0" } }}
                             striped
                             totalRecords={meta?.total}
                             highlightOnHover

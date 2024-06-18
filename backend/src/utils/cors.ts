@@ -1,11 +1,10 @@
 
 const whitelist = [
     "http://localhost:3055",
-    "http://localhost:5055",
+    "http://localhost:5055/api/v1/docs",
 ];
 const options: any = {
     origin: (origin: string, callback: Function) => {
-        console.log(origin);
         if (whitelist.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
@@ -15,7 +14,7 @@ const options: any = {
     methods: ["GET", "PUT", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
     credentials: true,
-    exposedHeaders: ["*", "Authorization"]
+    exposedHeaders: ["Authorization"]
 };
 
 export default options;
